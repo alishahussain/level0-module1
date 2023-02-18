@@ -10,20 +10,30 @@
      separate lines.
 """
 
-from tkinter import *
-import tkinter as tk
+import turtle
+from tkinter import Tk
+if __name__ == '__main__':
+    x = -300
+    y = 300
+    window = Tk()
+    window.withdraw()
+    john = turtle.Turtle()
+    john.penup()
+    john.goto(x,y)
+
+    for i in range(3):
+        john.write(arg="ice cream ", move=True, align='left', font=('Arial',70,'normal'))
+        y -= 70
+        john.goto(x,y)
+
+    y -= 70
+    john.write(arg="banana ", move=True, align='left', font=('Arial',70,'normal'))
+
+
 
 root = tk.Tk()
 
-canvas = tk.Canvas(root, width=200, height=200, bg="#FF00FF");
+canvas = tk.Canvas(root, bg="#FF00FF");
 canvas.grid()
-
-'''
-Text Rendering Example:
-                    x    y                                                       
-canvas.create_text(100, 50, text="text goes here", font=("Arial", 16))
-'''
-# Put your code below
-
 
 root.mainloop()
